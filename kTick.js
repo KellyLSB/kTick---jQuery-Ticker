@@ -90,8 +90,11 @@ Permissions beyond the scope of this license may be available at http://kellybec
 		if(isString(settings.json)) {
 			$.getJSON(settings.json, settings.jsonArgs, function(data) {
 				settings.json = data;
+				console.log(data);
 			});
 		}
+
+		console.log(isString(settings.json));
 
 		var x = 0;
 		var loop = false;
