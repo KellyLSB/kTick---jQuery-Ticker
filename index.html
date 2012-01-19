@@ -1,0 +1,53 @@
+<html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="kTick.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#ticker').kTick({
+		"animation": 'slide',
+		"animation_time": 100,
+		"timeout": 2500,
+		"template": "<span><strong>%title%</strong> %description%</span>",
+		"loop": true,
+	    "json": [
+	    	{
+	            "title": "Sample Title",
+	            "description": "This is a sample Tick"
+	        },
+	        {
+	            "title": "Another Tick",
+	            "description": "I love jQuery!"
+	        },
+	        {
+	            "title": "You can even insert HTML",
+	            "description": "<a href=\"http://kellybecker.me\">My Website</a>"
+	        },
+	        {
+	            "title": "YAH!",
+	            "description": "Love you all!"
+	        }
+	    ]
+	});
+})
+</script>
+<style>
+body {
+	background: #000;
+}
+span {
+	display:block;
+	font-size: 14px;
+	font-style: italic;
+	border: #DDD solid 1px;
+	margin: 3px;
+	padding: 3px;
+	background: #eee;
+}
+span strong {
+	display:block;
+	font-size: 18px;	
+}
+</style>
+<p id="ticker">
+</p>
+</html>
