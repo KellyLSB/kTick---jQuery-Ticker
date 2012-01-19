@@ -12,7 +12,7 @@
 		}
 
 		if(options == 'clear') {
-			this.children().remove();
+			this.kTick('stop').children().remove();
 			return this;
 		}
 
