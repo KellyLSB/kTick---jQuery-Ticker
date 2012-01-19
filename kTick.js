@@ -8,14 +8,19 @@
 
 		if(options == 'stop') {
 			clearInterval(srunning[this]);
-			return;
+			return this;
+		}
+
+		if(options == 'clear') {
+			this.children().remove();
+			return this;
 		}
 
 		if(options == 'reset') {
 			clearInterval(srunning[this]);
 			this.children().remove();
 			this.kTick(soptions[this]);
-			return;
+			return this;
 		}		
 
 		// Template Renderer
@@ -87,5 +92,7 @@
 				x = 0;
 			}
 		}, settings.timeout);
+
+		return this;
 	};
 })( jQuery );
