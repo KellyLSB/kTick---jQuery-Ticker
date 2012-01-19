@@ -88,7 +88,7 @@ Permissions beyond the scope of this license may be available at http://kellybec
 
 		// If is a string then assume url and load the json
 		if(isString(settings.json)) {
-			$.get(settings.json, settings.jsonArgs, function(data) {
+			$.getJSON(settings.json, settings.jsonArgs, function(data) {
 				settings.json = data;
 			});
 		}
