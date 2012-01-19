@@ -1,5 +1,5 @@
-kTick - jQuery Ticker (https://github.com/KellyLSB/Confirmation-Code-Generator)
-===============================================================================
+kTick - jQuery Ticker (https://github.com/KellyLSB/kTick---jQuery-Ticker)
+=========================================================================
 
 kTick is a simple jQuery ticker that parses and spits out a JSON array into whatever html you see fit.
 
@@ -18,7 +18,7 @@ kTick is a simple jQuery ticker that parses and spits out a JSON array into what
 
 License
 =======
-Confirmation Code Generator by Kelly Lauren Summer Becker is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
+kTick - jQuery Ticker by Kelly Lauren Summer Becker is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
 Permissions beyond the scope of this license may be available at http://kellybecker.me.
 
 [<img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" alt="BY-SA" title="BY-SA">](http://creativecommons.org/licenses/by-sa/3.0/)
