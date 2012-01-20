@@ -29,7 +29,7 @@ Permissions beyond the scope of this license may be available at http://kellybec
 	var srunning = new Object();
 	var soptions = new Object();
 			
-	$.fn.kTick = function(options) {
+	$.fn.kTick = function(options, tf) {
 
 		if(options == 'stop') {
 			clearInterval(srunning[this]);
@@ -43,7 +43,7 @@ Permissions beyond the scope of this license may be available at http://kellybec
 
 		if(options == 'reset') {
 			clearInterval(srunning[this]);
-			this.children().remove();
+			if(!tf) this.kTick('clear');
 			this.kTick(soptions[this]);
 			return this;
 		}		
@@ -80,7 +80,8 @@ Permissions beyond the scope of this license may be available at http://kellybec
 			'json': '',
 			'jsonArgs': {},
 			'loop': true,
-			'truncate': true
+			'truncate': true,
+			'reload': 10000 
 		} , options);
 
 		// Save Options for Future Use
@@ -90,14 +91,12 @@ Permissions beyond the scope of this license may be available at http://kellybec
 		if(isString(settings.json)) {
 			$.getJSON(settings.json, settings.jsonArgs, function(data) {
 				settings.json = data;
-				console.log(data);
 			});
 		}
 
-		console.log(isString(settings.json));
-
 		var x = 0;
 		var loop = false;
+		var date = Date.getMilliseconds() + settings.reload;
 		srunning[obj] = setInterval(function() {
 			// If this is a loop and we are truncating remove the last element
 			if(settings.truncate == true && loop == true) {
@@ -119,6 +118,10 @@ Permissions beyond the scope of this license may be available at http://kellybec
 				loop = true;
 				x = 0;
 			}
+
+			if(x == 0 && isString(soptions.json))
+				obj.kTick('reset', true);
+							
 		}, settings.timeout);
 
 		return this;
