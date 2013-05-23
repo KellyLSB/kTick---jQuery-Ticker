@@ -96,7 +96,8 @@ Permissions beyond the scope of this license may be available at http://kellybec
 
 		var x = 0;
 		var loop = false;
-		var date = Date.getMilliseconds() + settings.reload;
+		var date = new Date();
+		date = date.getMilliseconds() + settings.reload;
 		srunning[obj] = setInterval(function() {
 			// If this is a loop and we are truncating remove the last element
 			if(settings.truncate == true && loop == true) {
